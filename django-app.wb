@@ -16,7 +16,7 @@ builder organization --name SingHealth
 ######## Identification #############
 # App id, name, version, description, group (category)
 ######################################
-catalog new --distroid Django-ML --name "SingHealth Django App" --desc "Django Machine Learning for SingHealth" --categories Greetings --version 1.0 --epic 4.0
+catalog new --distroid Django-ML --name "SingHealth Django App" --desc "Django Machine Learning for SingHealth" --categories Greetings --version 1.0 --epic 5.3
 
 ####### Supported Roles ############
 # All possible roles supported in the app
