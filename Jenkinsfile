@@ -7,7 +7,9 @@ pipeline {
     stage("Build"){
       steps {
         script {
-          sh "bdwb django-app.wb"
+          sh """
+          bdwb django-app.wb
+          """
         }
       }
     }
