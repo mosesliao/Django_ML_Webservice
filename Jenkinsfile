@@ -7,11 +7,13 @@ pipeline {
     stage("Build"){
       steps {
         script {
-          sh """
-          bdwb django-app.wb
-          """
+          sh "bdwb django-app.wb"
         }
       }
+    }
+    stage('test') {
+      sh 'bdwb --launchui'
+      sh 'docker ps -a'
     }
     stage('Deploy') {
       steps {
