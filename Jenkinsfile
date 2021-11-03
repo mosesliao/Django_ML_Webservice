@@ -12,8 +12,12 @@ pipeline {
       }
     }
     stage('test') {
-      sh 'bdwb --launchui'
-      sh 'docker ps -a'
+      steps {
+        script{
+          sh 'bdwb --launchui'
+          sh 'docker ps -a'
+        }
+      }
     }
     stage('Deploy') {
       steps {
