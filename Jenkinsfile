@@ -1,21 +1,10 @@
 pipeline {
   agent any
-  environment{
-    PATH = "/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/.local/bin:/home/ec2-user/bin"
-  }
   stages {
-    stage("Build"){
+    stage("Initiate"){
       steps {
         script {
-          sh "bdwb django-app.wb"
-        }
-      }
-    }
-    stage('test') {
-      steps {
-        script{
-          sh 'bdwb --launchui'
-          sh 'docker ps -a'
+          sh "bdwb --init"
         }
       }
     }
