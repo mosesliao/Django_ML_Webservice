@@ -30,7 +30,7 @@ role add worker 0+
 # Display option creates a clickable link for that http based service
 ##################################################
 service add --srvcid httpd --name "DjangoML" --scheme "http" --port 8000 \
-            --path "/api/v1" --display  \
+            --path "/api/v1"  \
             # --sysctl httpd \
             --onroles webserver controller worker
 
