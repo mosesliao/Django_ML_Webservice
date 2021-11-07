@@ -9,16 +9,10 @@ pipeline {
         }
       }
     }
-    stage('Deploy') {
-      steps {
-        script{
-          echo 'deploy stage'
-        }
-      }
-    }
   }
   post {
     always {
+      archiveArtifacts artifacts: 'deliverables/*.bin', followSymlinks: false
       cleanWs()
     }
   }
