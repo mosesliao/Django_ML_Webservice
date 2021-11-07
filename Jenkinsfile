@@ -1,10 +1,11 @@
 pipeline {
   agent any
   stages {
-    stage("Initiate"){
+    stage("Build"){
       steps {
         script {
-          sh "bdwb --init"
+          echo "build bin file for HPE Ezmeral platform"
+          sh "bdwb django-app.wb"
         }
       }
     }
