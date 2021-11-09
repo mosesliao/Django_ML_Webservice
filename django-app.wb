@@ -21,9 +21,9 @@ catalog new --distroid Django-ML --name "SingHealth Django App" --desc "Django M
 ####### Supported Roles ############
 # All possible roles supported in the app
 #######################################
-role add webserver 1
-role add controller 1
-role add worker 0+
+# role add webserver 1
+# role add controller 1
+role add worker 1
 
 ############## All registered services #########
 # All possible services running on any of the nodes.
@@ -62,11 +62,11 @@ appconfig autogen --new --configapi 5
 ########### Update files with runtime information ############
 # Replace template variables with runtime values
 ###############################################################
-appconfig autogen --replace /var/www/html/index.html \
-                  --pattern @@@@FQDN@@@@  --macro GET_NODE_FQDN  \
-                  --pattern @@@@CORES@@@@ --macro GET_TOTAL_VCORES \
-                  --pattern @@@@MEMORY@@@@ --macro GET_TOTAL_VMEMORY_MB
-                  --onroles webserver controller worker
+# appconfig autogen --replace /var/www/html/index.html \
+#                   --pattern @@@@FQDN@@@@  --macro GET_NODE_FQDN  \
+#                   --pattern @@@@CORES@@@@ --macro GET_TOTAL_VCORES \
+#                   --pattern @@@@MEMORY@@@@ --macro GET_TOTAL_VMEMORY_MB
+#                   --onroles webserver controller worker
 
 ########### Copy init.d or systemctl (service) scripts to /etc/init.d ####
 # To automatically register and start/stop services create and copy systemd scripts
@@ -92,7 +92,7 @@ logo file --filepath django.jpg
 #  This section creates docker tgz and bin file                              #
 ##############################################################################
 image build -b . -i bluedata/django:1.0
-image package --image-repotag bluedata/django:1.0 --os ubuntu18  --roles webserver controller worker
+image package --image-repotag bluedata/django:1.0 --os ubuntu18  --roles worker
 
 
 #image build --basedir image/centos --image-repotag bluedata/helloworld
