@@ -16,7 +16,7 @@ builder organization --name SingHealth
 ######## Identification #############
 # App id, name, version, description, group (category)
 ######################################
-catalog new --distroid django-ml --name "SingHealth Django App" --desc "Django Machine Learning for SingHealth" --categories Greetings --version 1.0 --epic 4.0
+catalog new --distroid django-ml2 --name "SingHealth Django App2" --desc "Django Machine Learning for SingHealth" --categories Greetings --version 1.5 --epic 4.0
 
 ####### Supported Roles ############
 # All possible roles supported in the app
@@ -29,7 +29,7 @@ role add webserver 1
 # All possible services running on any of the nodes.
 # Display option creates a clickable link for that http based service
 ##################################################
-service add --srvcid httpd --name "DjangoML" --scheme "http" --port 8000 \
+service add --srvcid httpd --name "DjangoML2" --scheme "http" --port 8000 \
             --path "/api/v1"  \
             # --sysctl httpd \
             --onroles webserver
@@ -86,7 +86,7 @@ appconfig package
 ########################################################
 # Add Logo file for App store visual                   #
 ########################################################
-logo file --filepath django.jpg
+logo file --filepath SingHealth_logo.png
 
 ################### Final bin package creation ###############################
 #  This section creates docker tgz and bin file                              #
