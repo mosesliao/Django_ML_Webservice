@@ -32,7 +32,8 @@ role add webserver 1
 service add --srvcid httpd --name "DjangoML" --scheme "http" --port 8000 \
             --path "/api/v1"  \
             # --sysctl httpd \
-            --onroles webserver controller worker
+            --onroles webserver
+            #controller worker
 
 #################### CONTAINER CONFIGURATION SCRIPT (STARTSCRIPT) #################################
 #  This section generates or loads the startscript that runs on each container                     #
