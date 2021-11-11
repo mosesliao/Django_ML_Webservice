@@ -62,11 +62,10 @@ appconfig autogen --new --configapi 5
 ########### Update files with runtime information ############
 # Replace template variables with runtime values
 ###############################################################
-# appconfig autogen --replace /var/www/html/index.html \
-#                   --pattern @@@@FQDN@@@@  --macro GET_NODE_FQDN  \
-#                   --pattern @@@@CORES@@@@ --macro GET_TOTAL_VCORES \
-#                   --pattern @@@@MEMORY@@@@ --macro GET_TOTAL_VMEMORY_MB
-#                   --onroles webserver controller worker
+appconfig autogen --pattern @@@@FQDN@@@@  --macro GET_NODE_FQDN  \
+                  --pattern @@@@CORES@@@@ --macro GET_TOTAL_VCORES \
+                  --pattern @@@@MEMORY@@@@ --macro GET_TOTAL_VMEMORY_MB
+                  --onroles webserver
 
 ########### Copy init.d or systemctl (service) scripts to /etc/init.d ####
 # To automatically register and start/stop services create and copy systemd scripts
