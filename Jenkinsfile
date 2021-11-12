@@ -13,7 +13,11 @@ pipeline {
       }
     }
     stage('Deploy') {
-      sh 'scp deliverables/*.bin root@172.31.95.116:/srv/bluedata/catalog/'
+      steps {
+        script {
+          sh 'scp deliverables/*.bin root@172.31.95.116:/srv/bluedata/catalog/'
+        }
+      }
     }
   }
   post {
