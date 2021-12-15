@@ -10,7 +10,7 @@ deploy-job:
     - echo "This job deploys something from the $CI_COMMIT_BRANCH branch."
 
 cleanup_job:
-  stage: cleanup
+  stage: .post
   script:
     - echo "Cleaning up"
     - rm -rf "%CACHE_PATH%/%CI_PIPELINE_ID%"
